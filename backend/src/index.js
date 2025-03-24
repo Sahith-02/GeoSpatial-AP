@@ -20,7 +20,11 @@ app.use(
     secret: "your-secret-key",
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false, maxAge: 2000 * 60 * 60 }, // 1 hour
+    cookie: {
+      secure: true,
+      sameSite: "none",
+      maxAge: 2000 * 60 * 60,
+    },
   })
 );
 
